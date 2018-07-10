@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import getAnswer from '..';
+import greeting from '..';
 
 console.log('Welcome to the Brain Games! \n');
-console.log(`Hello, ${getAnswer('May I have your name? ')}!`);
+greeting('May I have your name? ');
