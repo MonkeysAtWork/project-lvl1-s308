@@ -14,6 +14,7 @@
   ],
   "scripts": {
     "babel-node": "babel-node",
+    "eslint": "eslint",
     "build": "NODE_ENV=prodaction babel src --out-dir dist --source-maps inline",
     "prepublishOnly": "npm run build"
   },
@@ -33,8 +34,12 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
-    "babel-preset-env": "^1.7.0",
+    "babel-eslint": "^8.2.5",
+    "babel-preset-env": "^1.6.1",
     "babel-preset-stage-0": "^6.24.1",
-    "eslint": "^5.1.0"
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb-base": "^13.0.0",
+    "eslint-plugin-babel": "^5.0.0",
+    "eslint-plugin-import": "^2.13.0"
   }
 }
