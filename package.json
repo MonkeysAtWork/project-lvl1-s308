@@ -1,12 +1,13 @@
 {
   "name": "project1-br_games",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "description": "educational projecton on JS",
   "keywords": [
     "game",
     "brain"
   ],
   "bin": {
+    "brain-even": "dist/bin/brain-even.js",
     "brain-games": "dist/bin/brain-games.js"
   },
   "files": [

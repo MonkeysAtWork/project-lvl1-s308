@@ -1,3 +1,9 @@
 import readlineSync from 'readline-sync';
 
-export default msg => console.log(`Hello, ${readlineSync.question(msg)}!`);
+export const getAnswer = msg => readlineSync.question(msg);
+
+export const getUserName = (msg) => {
+  const name = getAnswer(msg);
+  console.log(`Hello, ${name}! \n`);
+  return name;
+};
