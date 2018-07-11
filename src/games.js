@@ -1,6 +1,6 @@
 import { getAnswer } from '.';
-import random from './random';
 
+const random = () => Math.floor(Math.random() * 100);
 const isEven = num => num % 2 === 0;
 
 const testAnswer = (num, answer) => {
@@ -19,10 +19,10 @@ const play = (num, count, userName) => {
   console.log(`Your answer: ${userInput}`);
   if (testAnswer(num, userInput)) {
     console.log('Correct!');
-    return play(random(count - 1), count - 1, userName);
+    return play(random(), count - 1, userName);
   }
   console.log(`'${userInput}' is wrong answer ;(. Correct answer was '${isEven(num) ? 'yes' : 'no'}'.`);
   return console.log(`Let's try again, ${userName}!`);
 };
 
-export default userName => play(random(3), 3, userName);
+export default userName => play(random(), 3, userName);
