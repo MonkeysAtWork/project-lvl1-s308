@@ -1,6 +1,6 @@
 {
   "name": "project1-br_games",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "educational projecton on JS",
   "keywords": [
     "game",
@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/FineFreddy/project-lvl1-s308#readme",
   "dependencies": {
+    "hexlet-pairs": "^1.0.8",
     "readline-sync": "^1.4.9"
   },
   "devDependencies": {
