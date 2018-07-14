@@ -1,27 +1,25 @@
 import { cons } from 'hexlet-pairs';
 import startGame from '..';
+import getRandomNumber from '../utils';
 
 const description = 'What is the result of expression?';
 
-// max value exclude, min include
-const getRandomNumber = (min = 1, max = 100) => Math.floor(Math.random() * (max - min)) + min;
-
-const formExample = (a, b, sign) => {
-  switch (sign) {
+const makeQuestionAndAnswer = (a, b, variation) => {
+  switch (variation) {
     case 1:
-      return cons(`${a} + ${b}`, String(a + b));
+      return cons(`${a} + ${b}`, (a + b));
     case 2:
-      return cons(`${a} - ${b}`, String(a - b));
+      return cons(`${a} - ${b}`, (a - b));
     default:
-      return cons(`${a} * ${b}`, String(a * b));
+      return cons(`${a} * ${b}`, (a * b));
   }
 };
 
-const getMathExampleAndSolution = () => {
+const getGameData = () => {
   const num1 = getRandomNumber();
   const num2 = getRandomNumber(1, 10);
-  const act = getRandomNumber(1, 4);
-  return formExample(num1, num2, act);
+  const variation = getRandomNumber(1, 4);
+  return makeQuestionAndAnswer(num1, num2, variation);
 };
 
-export default () => startGame(description, getMathExampleAndSolution);
+export default () => startGame(description, getGameData);
