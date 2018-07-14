@@ -1,36 +1,25 @@
 import { cons } from 'hexlet-pairs';
 import startGame from '..';
+import getRandomNumber from '../utils';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
-const getRandomNumber = (min = 1, max = 100) => Math.floor(Math.random() * (max - min)) + min;
-
-const isDevisor = (num, dev) => num % dev === 0;
-const moveToNextDevisor = (num, dev) => (isDevisor(num, dev)
-  ? moveToNextDevisor(num / dev, dev) : num);
-
-const getGcd = (number1, number2, devisor, acc) => {
-  if (devisor > number1 || devisor > number2) {
-    return acc;
+const calcGcd = (a, b) => {
+  if (a === 0 || b === 0) {
+    return a + b;
   }
-  if (isDevisor(number1, devisor) && isDevisor(number2, devisor)) {
-    return getGcd(number1 / devisor, number2 / devisor, devisor, acc * devisor);
-  }
-  const restOfDivisionNum1 = moveToNextDevisor(number1, devisor);
-  const restOfDivisionNum2 = moveToNextDevisor(number2, devisor);
-  return getGcd(restOfDivisionNum1, restOfDivisionNum2, devisor + 1, acc);
+  return a > b ? calcGcd(a % b, b) : calcGcd(a, b % a);
 };
 
-const getExampleForGame = () => {
+const getGameData = () => {
   const number1 = getRandomNumber(2, 100);
   const number2 = getRandomNumber(2, 100);
-  const startDevisor = 2;
-  const startAcc = 1;
-  const gcd = getGcd(number1, number2, startDevisor, startAcc);
-  if (gcd < 3 || number1 === number2) {
-    return getExampleForGame();
+  const question = `${number1} ${number2}`;
+  const answer = calcGcd(number1, number2);
+  if (answer < 2 || number1 === number2) {
+    return getGameData();
   }
-  return cons(`${number1} ${number2}`, String(gcd));
+  return cons(question, answer);
 };
 
-export default () => startGame(description, getExampleForGame);
+export default () => startGame(description, getGameData);
