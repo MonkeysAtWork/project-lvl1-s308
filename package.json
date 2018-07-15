@@ -1,14 +1,19 @@
 {
   "name": "project1-br_games",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "description": "educational projecton on JS, contains mini-games",
   "keywords": [
-    "game",
+    "games",
+    "prime",
+    "balance",
+    "progression",
+    "gcd",
     "brain",
     "even",
     "calc"
   ],
   "bin": {
+    "brain-prime": "dist/bin/brain-prime.js",
     "brain-progression": "dist/bin/brain-progression.js",
     "brain-balance": "dist/bin/brain-balance.js",
     "brain-gcd": "dist/bin/brain-gcd.js",
