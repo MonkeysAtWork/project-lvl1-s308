@@ -51,7 +51,7 @@ $ brain-gcd
 ```
 #### Sample
 
-![play gcd GIF](gcd/even.gif)
+![play gcd GIF](gifs/gcd.gif)
 
 ### Game 4 - Balance
 ```
