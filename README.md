@@ -9,12 +9,12 @@
 
 This is CLI mini math games. Set consist of  6 games:
 
-1. Even Or Not
+1. is Even?
 2. Calculator
 3. 'GCD'
 4. Balance
 5. Progression
-6. Prime Or Not
+6. is Prime?
 
 
 ## Installation
@@ -29,7 +29,7 @@ In terminal you have to type **brain-games** or name of one of given game. For e
 ## Game's rules
 Every game has 3 rounds. If you give right answer on any offered question it lets you go to the next round otherwise game over, which reports message with correct answer.
 
-### Game 1 - Even Or Not
+### Game 1 - is Even?
 ```
 $ brain-even
 ```
@@ -69,7 +69,7 @@ $ brain-progression
 
 ![play progression GIF](gifs/progression.gif)
 
-### Game 6 - Prime Or Not
+### Game 6 - is Prime
 ```
 $ brain-prime
 ```
