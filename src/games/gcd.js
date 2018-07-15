@@ -16,7 +16,7 @@ const getGameData = () => {
   const number2 = getRandomNumber(2, 100);
   const question = `${number1} ${number2}`;
   const answer = calcGcd(number1, number2);
-  return cons(question, answer);
+  return cons(question, String(answer));
 };
 
 export default () => startGame(description, getGameData);

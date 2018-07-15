@@ -22,9 +22,9 @@ const sum = (str) => {
 
 const makeBalance = (number) => {
   const numberLength = length(String(number));
-  const SumOfNumbers = sum(String(number));
-  const average = Math.floor(SumOfNumbers / numberLength);
-  const additionLength = SumOfNumbers % numberLength;
+  const sumOfNumbers = sum(String(number));
+  const average = Math.floor(sumOfNumbers / numberLength);
+  const additionLength = sumOfNumbers % numberLength;
   const base = getRepeatUnits(numberLength);
   const addition = getRepeatUnits(additionLength);
   return base * average + addition;
@@ -33,7 +33,7 @@ const makeBalance = (number) => {
 const getGameData = () => {
   const question = getRandomNumber(100, 10000);
   const answer = makeBalance(question);
-  return cons(question, answer);
+  return cons(question, String(answer));
 };
 
 export default () => startGame(description, getGameData);

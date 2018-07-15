@@ -10,7 +10,7 @@ const play = (level, getGameData) => {
   }
   const QuestionAndAnswer = getGameData();
   const question = car(QuestionAndAnswer);
-  const correctAnswer = String(cdr(QuestionAndAnswer));
+  const correctAnswer = (cdr(QuestionAndAnswer));
   const userAnswer = readlineSync.question(`Question: ${question} `);
   console.log(`Your answer: ${userAnswer}`);
   if (userAnswer === correctAnswer) {
