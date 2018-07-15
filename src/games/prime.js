@@ -5,6 +5,9 @@ import getRandomNumber from '../utils';
 const description = 'Is this number prime?';
 
 const isPrime = (num) => {
+  if (num < 2) {
+    return false;
+  }
   const iter = (acc) => {
     if (acc > num / 2) {
       return true;
@@ -18,7 +21,7 @@ const isPrime = (num) => {
 };
 
 const getGameData = () => {
-  const question = getRandomNumber();
+  const question = getRandomNumber(0, 100);
   const answer = isPrime(question) ? 'yes' : 'no';
   return cons(question, answer);
 };

@@ -1,6 +1,6 @@
 import { cons } from 'hexlet-pairs';
 import startGame from '..';
-import getRandomNumber, { length } from '../utils';
+import getRandomNumber from '../utils';
 
 const description = 'Balance the given number.';
 
@@ -14,14 +14,14 @@ const getRepeatUnits = (len) => {
 
 const sum = (str) => {
   let result = 0;
-  for (let i = 0; i < length(str); i += 1) {
+  for (let i = 0; i < str.length; i += 1) {
     result += Number(str[i]);
   }
   return result;
 };
 
 const makeBalance = (number) => {
-  const numberLength = length(String(number));
+  const numberLength = String(number).length;
   const sumOfNumbers = sum(String(number));
   const average = Math.floor(sumOfNumbers / numberLength);
   const additionLength = sumOfNumbers % numberLength;
